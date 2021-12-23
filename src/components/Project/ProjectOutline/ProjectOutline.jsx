@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Row, Col, Button, Form } from 'react-bootstrap';
 import ProjectFlairInput from '../ProjectFlairInput/ProjectFlairInput';
+import ProjectInstruction from '../ProjectInstruction/ProjectInstruction';
 import ProjectLogicPicture from '../ProjectLogicPicture/ProjectLogicPicture';
 import ProjectReport from '../ProjectReport/ProjectReport';
 import ProjectT1Input from '../ProjectT1Input/ProjectT1Input';
@@ -58,7 +59,6 @@ const ProjectOutline = () => {
     event.preventDefault();
 
     // logic to add to the list
-    // t1ImageChecker && setDisplayListT1(oldArray => [...oldArray, "T1 Input Image"])
     skullStripChecker &&
       setDisplayListT1((oldArray) => [...oldArray, 'Skull Strip']);
     biasCorrectionChecker &&
@@ -70,7 +70,6 @@ const ProjectOutline = () => {
     tensorBasedChecker &&
       setDisplayListT1((oldArray) => [...oldArray, 'Tensor-based morphometry']);
 
-    // flairImageChecker && setDisplayListFLAIR(oldArray => [...oldArray, "FLAIR Input Image"])
     gradientChecker &&
       setDisplayListFLAIR((oldArray) => [...oldArray, 'Gradient Analysis']);
     intensityChecker &&
@@ -91,7 +90,7 @@ const ProjectOutline = () => {
 
   // reset everything
   const resetHandler = () => {
-    // the report
+    //reset the report
     setDisplayListFLAIR([]);
     setDisplayListT1([]);
   };
@@ -99,6 +98,7 @@ const ProjectOutline = () => {
   return (
     <div>
       <ProjectLogicPicture />
+      <ProjectInstruction />
       <Form onSubmit={submitHandler}>
         <Row>
           <Col md={6}>
