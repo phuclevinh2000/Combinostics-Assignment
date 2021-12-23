@@ -1,0 +1,59 @@
+.topic-image {
+  width: 60vw;
+  height: 50vh;
+}
+
+.image-input {
+  border: 2px solid lightseagreen;
+  border-radius: 7px; 
+  width: 200px;
+  height: 200px;
+}
+
+.image {
+  border: 2px solid burlywood;
+  border-radius: 7px; 
+  background-color: lightskyblue;
+}
+
+.other-input {
+  border: 2px solid lightgreen;
+  border-radius: 7px;
+}
+
+.normal {
+  border: 2px solid lightgreen;
+  border-radius: 7px;
+}
+
+.active {
+  background-color: lightgreen;
+  border-radius: 7px;
+}
+
+.hover-on {
+  transition: all 0.5s;
+  position: relative;
+  transition: 0.5s;
+  &::after {
+    content: '<<';
+    font-size: 15px;
+    position: absolute;
+    opacity: 0;
+    top: 32px;
+    right: -20px;
+    transition: 0.5s;
+  }
+  &:hover {
+    background-color: rgb(180, 219, 180);
+  }
+  &:hover::after {
+    opacity: 1;
+    right: 5px;
+  }
+}
+
+.hover-off {
+  border: 1px solid red;
+}
+
